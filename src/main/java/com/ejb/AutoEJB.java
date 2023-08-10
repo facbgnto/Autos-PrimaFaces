@@ -9,7 +9,7 @@ import java.util.List;
 public class AutoEJB {
 
     public List<Auto> getAutos() {
-        List<Auto> autos = new ArrayList<>();
+        List<Auto> autos = new ArrayList<Auto>();
         autos.add(new Auto(1, "Toyota", "Corolla", 2023, "Azul"));
         autos.add(new Auto(2, "Ford", "Mustang", 2023, "Rojo"));
         autos.add(new Auto(3, "Chevrolet", "Camaro", 2023, "Negro"));

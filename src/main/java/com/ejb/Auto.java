@@ -9,7 +9,7 @@ public class Auto {
     private int id;
     private String marca;
     private String modelo;
-    private int año;
+    private int anio;
     private String color;
 
     // Constructor, getters y setters

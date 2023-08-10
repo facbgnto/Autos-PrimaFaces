@@ -8,9 +8,15 @@
     <title>Lista de Autos</title>
 </h:head>
 
+<h:form>
+    <p:outputLabel for="filtroMarca" value="Filtrar por Marca:" />
+    <p:inputText id="filtroMarca" value="#{autoBean.filtroMarca}" />
+    <p:commandButton value="Filtrar" action="#{autoBean.filtrarPorMarca}" update="autosTable" />
+</h:form>
+
 <h:body>
     <h1>Lista de Autos</h1>
-    <p:dataTable var="auto" value="#{autoBean.autos}" paginator="true" rows="10">
+    <p:dataTable id="autosTable" var="auto" value="#{autoBean.autosFiltrados}" paginator="true" rows="10">
         <p:column headerText="ID">
             <h:outputText value="#{auto.id}" />
         </p:column>
@@ -21,7 +27,7 @@
             <h:outputText value="#{auto.modelo}" />
         </p:column>
         <p:column headerText="Año">
-            <h:outputText value="#{auto.año}" />
+            <h:outputText value="#{auto.anio}" />
         </p:column>
         <p:column headerText="Color">
             <h:outputText value="#{auto.color}" />
