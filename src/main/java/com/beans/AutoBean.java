@@ -1,7 +1,7 @@
-package com.example.beans;
+package com.beans;
 
-import com.example.ejb.Auto;
-import com.example.ejb.AutoEJB;
+import com.ejb.Auto;
+import com.ejb.AutoEJB;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;

@@ -1,4 +1,5 @@
-package com.example.ejb;
+package com.ejb;
+
 
 import javax.ejb.Stateless;
 import java.util.ArrayList;
@@ -6,6 +7,7 @@ import java.util.List;
 
 @Stateless
 public class AutoEJB {
+
     public List<Auto> getAutos() {
         List<Auto> autos = new ArrayList<>();
         autos.add(new Auto(1, "Toyota", "Corolla", 2023, "Azul"));
@@ -48,7 +50,7 @@ public class AutoEJB {
         autos.add(new Auto(38, "Dodge", "Challenger", 2023, "Rojo"));
         autos.add(new Auto(39, "Ram", "1500", 2023, "Azul"));
         autos.add(new Auto(40, "GMC", "Sierra", 2023, "Gris"));
-
-         return autos;
+        System.out.println("Cantidad de autos: " + autos.size());
+        return autos;
     }
 }

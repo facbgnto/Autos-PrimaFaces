@@ -1,7 +1,9 @@
-package com.example.ejb;
+package com.ejb;
 import lombok.Data;
-
+import lombok.ToString;
+import lombok.AllArgsConstructor;
 @Data
+@ToString
 @AllArgsConstructor
 public class Auto {
     private int id;
