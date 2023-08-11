@@ -16,15 +16,15 @@
 
 <h:body>
     <h1>Lista de Autos</h1>
-    <p:dataTable id="autosTable" var="auto" value="#{autoBean.autosFiltrados}" paginator="true" rows="10">
+    <p:dataTable id="autosTable" var="auto" value="#{not empty autoBean.autosFiltrados ? autoBean.autosFiltrados : autoBean.autos}"  paginator="true" rows="10">
         <p:column headerText="ID">
             <h:outputText value="#{auto.id}" />
         </p:column>
-        <p:column headerText="Marca">
+        <p:column headerText="Marca" >
             <h:outputText value="#{auto.marca}" />
         </p:column>
         <p:column headerText="Modelo">
-            <h:outputText value="#{auto.modelo}" />
+            <h:outputText value="#{auto.modelo}"  />
         </p:column>
         <p:column headerText="Año">
             <h:outputText value="#{auto.anio}" />
