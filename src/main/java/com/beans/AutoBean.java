@@ -19,20 +19,17 @@ public class AutoBean{
     private AutoEJB autoEJB;
 
     private List<Auto> autos;
-    private List<Auto> autosFiltrados;
-    private String filtroMarca;
+    private List<Auto> filtros;
+
+
 
     @PostConstruct
     public void init() {
         autos = autoEJB.getAutos();
+        filtros = new ArrayList<Auto>();
+        System.out.println("Cantidad de autos212: " + autos.size());
+        System.out.println("Cantidad de autos filtro: " + filtros.size());
     }
 
-    public void filtrarPorMarca() {
-        autosFiltrados = new ArrayList<Auto>();
-        for (Auto auto : autos) {
-            if (auto.getMarca().toLowerCase().contains(filtroMarca.toLowerCase())) {
-                autosFiltrados.add(auto);
-            }
-        }
-    }
+
 }

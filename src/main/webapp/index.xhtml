@@ -8,33 +8,26 @@
     <title>Lista de Autos</title>
 </h:head>
 
-<h:form>
-    <p:outputLabel for="filtroMarca" value="Filtrar por Marca:" />
-    <p:inputText id="filtroMarca" value="#{autoBean.filtroMarca}" />
-    <p:commandButton value="Filtrar" action="#{autoBean.filtrarPorMarca}" update="autosTable" />
-</h:form>
-
 <h:body>
     <h1>Lista de Autos</h1>
-    <p:dataTable id="autosTable" var="auto" value="#{not empty autoBean.autosFiltrados ? autoBean.autosFiltrados : autoBean.autos}"  paginator="true" rows="10">
-        <p:column headerText="ID">
-            <h:outputText value="#{auto.id}" />
-        </p:column>
-        <p:column headerText="Marca" >
-            <h:outputText value="#{auto.marca}" />
-        </p:column>
-        <p:column headerText="Modelo">
-            <h:outputText value="#{auto.modelo}"  />
-        </p:column>
-        <p:column headerText="Año">
-            <h:outputText value="#{auto.anio}" />
-        </p:column>
-        <p:column headerText="Color">
-            <h:outputText value="#{auto.color}" />
-        </p:column>
-    </p:dataTable>
-
-
-
+    <h:form>
+        <p:dataTable var="auto" value="#{autoBean.autos}" paginator="true" rows="10" filteredValue="#{autoBean.filtros}">
+            <p:column headerText="ID" filterBy="#{auto.id}" filterMatchMode="contains">
+                <h:outputText value="#{auto.id}" />
+            </p:column>
+            <p:column headerText="Marca" filterBy="#{auto.marca}" filterMatchMode="contains">
+                <h:outputText value="#{auto.marca}" />
+            </p:column>
+            <p:column headerText="Modelo" filterBy="#{auto.modelo}" filterMatchMode="contains">
+                <h:outputText value="#{auto.modelo}" />
+            </p:column>
+            <p:column headerText="Año" filterBy="#{auto.anio}" filterMatchMode="contains">
+                <h:outputText value="#{auto.anio}" />
+            </p:column>
+            <p:column headerText="Color" filterBy="#{auto.color}" filterMatchMode="contains">
+                <h:outputText value="#{auto.color}" />
+            </p:column>
+        </p:dataTable>
+    </h:form>
 </h:body>
 </html>
